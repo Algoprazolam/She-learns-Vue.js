@@ -10,10 +10,17 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <!-- Referring to our Product in our Data using mustache -->
+      <h1>{{product}}</h1>
     </div>
 
-    <!-- Import Js -->
+    <!-- Importing the Vue App instead of just JS-->
+    <!-- Import App -->
     <script src="./main.js"></script>
+
+    <!-- Mount app into the DOM -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
   </body>
 </html>
