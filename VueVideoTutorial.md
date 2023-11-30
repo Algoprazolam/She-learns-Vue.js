@@ -2,3 +2,7 @@
 https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3
 
 Will document new findings here as well as upload the whole project you make during these tutorials to this Repo.
+
+## Starting out
+
+The video asks you to clone this repo. https://github.com/Code-Pop/Intro-to-Vue-3
