@@ -203,12 +203,90 @@ please read the above-mentioned article in step 5 because it also explains when 
 
 ## Step 6, conditional Rendering
 
+[https://vuejs.org/guide/essentials/conditional.html](https://vuejs.org/guide/essentials/conditional.html)
+
 I feel like this doesn’t need much explanation if you have any experience coding.
 
-Show this `<h1>` when awesome in the data component option = true with v-if =”awesome”
+Show this <h1> when awesome in the data component option = true with v-if =”awesome”
 
 else show the other one with v-else.
 
 the toggle is written to make ‘awesome’ the opposite of itself. so when true it becomes false and vice versa.
 
 ![Untitled](images/Untitled%208.png)
+
+## Step 7, List Rendering
+
+[https://vuejs.org/guide/essentials/list.html](https://vuejs.org/guide/essentials/list.html)
+
+v-for directive, your favorite loop. Here it’s explained how to use it by making a list item for each item in an array.
+
+Let’s add items to an on-screen list by adding them to our array, and then it will dynamically appear on the screen
+
+```jsx
+//info on all array mutating methods
+// https://stackoverflow.com/questions/9009879/which-javascript-array-functions-are-mutating
+//you would use them like so in Vue.js
+this.todos.push(newTodo)
+
+//alternatively you can replace arrays with new ones to add and items from it
+this.todos = this.todos.filter(/* ... */)
+```
+
+in this code, the word newTodo was used so often i got confused. so i renamed some things to oo and pp to show what calls for what.
+
+```jsx
+<script>
+// give each todo a unique id
+let id = 0
+
+export default {
+  data() {
+    return {
+      newTodo: '',
+      todos: [
+        { id: id++, text: 'Learn HTML' },
+        { id: id++, text: 'Learn JavaScript' },
+        { id: id++, text: 'Learn Vue' }
+      ]
+    }
+  },
+  methods: {
+    addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo })
+      this.newTodo = ''
+    },
+    removeTodo(oo) {
+      this.todos.splice(this.todos.indexOf(oo), 1)
+    }
+  }
+}
+</script>
+
+<template>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo">
+    <button>Add Todo</button>    
+  </form>
+  <ul>
+    <li v-for="pp in todos" :key="pp.id">
+      {{ pp.text }}
+      <button @click="removeTodo(pp)">X</button>
+    </li>
+  </ul>
+</template>
+```
+
+![Untitled](images/Untitled%209.png)
+
+![Untitled](images/Untitled%2010.png)
+
+alternatively, how to remove part of the array
+
+![Untitled](images/Untitled%2011.png)
+
+the hell is the key attribute
+
+[https://vuejs.org/api/built-in-special-attributes.html#key](https://vuejs.org/api/built-in-special-attributes.html#key)
+
+it’s used in a lot of things. the main thing is that it will re-render the item that has a key instead of just patching it. and also for loops that have an order. it’s a bit much to write here, but the link is there.
