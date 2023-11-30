@@ -90,3 +90,51 @@ looking something like this.
 ![Alt text](images/image2.png)
 
 # Part 2
+
+The tutorial asks to check out a github branch https://github.com/Code-Pop/Intro-to-Vue-3/tree/L3-start and
+grab whatever you're missing, which in this case are some divs with some classes that have pre-written css.
+
+```html
+  <div id="app">
+      <div class="nav-bar"></div>
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <!-- image goes here -->
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p>{{description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+```
+
+## Attribute Binding
+Time to add an image. To do this we add an image path to our Data object in our Vue App.
+
+```jsx
+image: './assets/images/socks_green.jpg'
+```
+
+and bind the image attribute as the source of an html img tag.
+
+```html
+ <img v-bind:src="image" alt="image of socks" >
+
+ <!-- Or the shorthand for vbind. just a colon ':' -->
+<img :src="image" alt="image of socks" >
+
+ ```
+ and you can bind everything like this. 
+ ```jsx
+             url: 'https://github.com/Algoprazolam/She-learns-Vue.js',
+            githubIcon: 'https://img.icons8.com/ios/50/github--v1.png',
+            githubClass: 'github'
+
+```
+```html
+<a :href="url"><img :class="githubClass" :src="githubIcon"></a>
+```

@@ -10,10 +10,27 @@
   </head>
   <body>
     <div id="app">
-      <!-- Referring to our Product in our Data using mustache -->
-      <h1>{{product}}</h1>
-      <p>{{description}}</p>
+      <div class="nav-bar">
+       
+          
+            <a :href="url"><img :class="githubClass" :src="githubIcon"></a>
+          
+          
+      </div>
+      
+      <div class="product-display">
+        <div class="product-container">
+          <div class="product-image">
+            <img :src="image" :alt="altText" >
+          </div>
+          <div class="product-info">
+            <h1>{{ product }}</h1>
+            <p>{{description}}</p>
+          </div>
+        </div>
+      </div>
     </div>
+      
 
     <!-- Importing the Vue App instead of just JS-->
     <!-- Import App -->
