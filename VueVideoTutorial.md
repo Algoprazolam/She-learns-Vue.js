@@ -3,6 +3,7 @@ https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3
 
 Will document new findings here as well as upload the whole project you make during these tutorials to this Repo.
 
+# Part 1
 ## Starting out
 
 The video asks you to clone this repo. https://github.com/Code-Pop/Intro-to-Vue-3
@@ -65,3 +66,27 @@ Now we can start referring to the data in our Vue App using Mustache
 
 Important to note that only HTML elements with an ID the name of the Vue app have access to the data
 ![Alt text](/images/image.png)
+
+You can add more objects to data like this
+
+```jsx
+return {
+            product: 'Socks',
+            description: 'They\'re just cute little socks.'
+        }
+        
+```
+
+and display it on a page like this
+
+```jsx
+<div id="app">
+      <!-- Referring to our Product in our Data using mustache -->
+      <h1>{{product}}</h1>
+      <p>{{description}}</p>
+    </div>
+```
+looking something like this.
+![Alt text](images/image2.png)
+
+# Part 2
