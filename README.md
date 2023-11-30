@@ -203,9 +203,9 @@ please read the above-mentioned article in step 5 because it also explains when 
 
 ## Step 6, conditional Rendering
 
-I feel like this doesn’t need much explanation if you have any experience coding experience.
+I feel like this doesn’t need much explanation if you have any experience coding.
 
-Show this <h1> when awesome in the data component option = true with v-if =”awesome”
+Show this `<h1>` when awesome in the data component option = true with v-if =”awesome”
 
 else show the other one with v-else.
 
